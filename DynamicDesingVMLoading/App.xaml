@@ -1,0 +1,33 @@
+﻿<Application x:Class="DynamicDesingVMLoading.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DynamicDesingVMLoading"
+             xmlns:infoPanelVM="clr-namespace:DynamicDesingVMLoading.ViewModels.SubViewModels"
+             xmlns:infoPanelView="clr-namespace:DynamicDesingVMLoading.Views.SubViews"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Provide the view for the related info panel view model types-->
+            <DataTemplate DataType="{x:Type infoPanelVM:PocketsInfoPanelViewModel}">
+                <infoPanelView:PocketsInfoPanelView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type infoPanelVM:TrayInfoPanelViewModel}">
+                <infoPanelView:TrayInfoPanelView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type infoPanelVM:UserInfoPanelViewModel}">
+                <infoPanelView:UserInfoPanelView />
+            </DataTemplate>
+
+            <!--Provide the view for the related side bar panel view model types-->
+            <DataTemplate DataType="{x:Type infoPanelVM:PocketsTabItemOneSideBarViewModel}">
+                <infoPanelView:PocketsTabItemOneSideBarView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type infoPanelVM:PocketsTabItemTwoSideBarViewModel}">
+                <infoPanelView:PocketsTabItemTwoSideBarView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
